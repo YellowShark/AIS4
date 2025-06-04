@@ -9,6 +9,12 @@ def dfs(graph, start, end, visited=None):
             if new_path:
                 return new_path
     return visited
+    
+def validate_vertices(graph, start, end):
+    if start not in graph:
+        raise ValueError(f"Стартовая вершина {start} отсутствует в графе.")
+    if end not in graph:
+        raise ValueError(f"Конечная вершина {end} отсутствует в графе.")
 
 graph = {4: [2], 1: [3], 2: [4]}
 path = dfs(graph, 2, 4)
