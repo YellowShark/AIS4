@@ -1,7 +1,7 @@
-def dfs(graph, start, end, visited=None):
-    if visited is None:
+def dfs(graph, start, end, visited=None): # обход в глубину
+    if visited is None: # проверка пути
         visited = [start]
-    if start == end:
+    if start == end: # проверка конца
         return visited
     for neighbor in graph.get(start, []):
         if neighbor not in visited:
@@ -9,7 +9,7 @@ def dfs(graph, start, end, visited=None):
             if new_path:
                 return new_path
     return visited
-    
+
 def validate_vertices(graph, start, end):
     if start not in graph:
         raise ValueError(f"Стартовая вершина {start} отсутствует в графе.")
