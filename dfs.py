@@ -1,7 +1,7 @@
 def dfs(graph, start, end, visited=None): # обход в глубину
-    if visited is None: # проверка пути
+    if visited is None: # check path
         visited = [start]
-    if start == end: # проверка конца
+    if start == end: # check end
         return visited
     for neighbor in graph.get(start, []):
         if neighbor not in visited:
