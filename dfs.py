@@ -3,7 +3,7 @@ def dfs(graph, start, end, visited=None): # обход в глубину
         visited = [start]
     if start == end: # check end
         return visited
-    for neighbor in graph.get(start, []):
+    for neighbor in graph.get(start, []): # check neighbor
         if neighbor not in visited:
             new_path = dfs (graph, neighbor, end, visited + [neighbor])
             if new_path:
